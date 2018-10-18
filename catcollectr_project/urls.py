@@ -13,15 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+from django.urls import include, path
 from django.contrib import admin
-from django.urls import path
+
 
 # imports the views.py from main_app
-from main_app import views
+# from main_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # First argument is the relative path for the URL, second is the specific path to the view function we want to associate with our route
-    path('index/', views.index)
+    # First argument is the relative path for the URL, second is the specific path to the view function we want to associate with our route. 'index/' is for debugging and proof of concepts. Use '' root route instead
+    # path('', views.index)
+
+    path('', include('main_app.urls'))
 ]
