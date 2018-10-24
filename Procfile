@@ -1,0 +1,1 @@
+web: gunicorn catcollectr_project.wsgi
