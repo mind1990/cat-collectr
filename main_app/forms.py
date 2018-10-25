@@ -9,10 +9,10 @@ from .models import Cat
 # 	age = forms.IntegerField(label='Age')
 
 
-class CatForm(form.ModelForm):
+class CatForm(forms.ModelForm):
 	class Meta:
 		model = Cat
-		field = ('name', 'breed', 'description', 'age')
+		fields = ('name', 'breed', 'description', 'age')
 
 
 
